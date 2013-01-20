@@ -1,18 +1,21 @@
-node-wrt-lazy
-=============
+Lazy Functions
+==============
 
-A lazy library that helps you do node.js with less effort. It povides asynchronous control flow 
-wrappers designed to read naturally, using Caolan McMahon excellent [async](https://github.com/caolan/async) 
-library under the bonnet.
+[Node water](https://github.com/aogriffiths/node-wtr) for lazy people like me, who
+want to do more node.js with less effort. 
+
+
+Povides asynchronous control flow wrappers designed to read naturally, using 
+Caolan McMahon excellent [async](https://github.com/caolan/async)  library under 
+the bonnet.
 
 Install
 -------
 
-From npm (https://npmjs.org/package/lazy-functions)
-
-'''bash
+```bash
 npm install lazy-functions
-'''
+```
+See also [lazy-functions](https://npmjs.org/package/lazy-functions) on npmjs.org.
 
 Concepts
 --------
