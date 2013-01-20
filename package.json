@@ -1,0 +1,28 @@
+{
+  "name": "lazy-functions",
+  "description": "A lazy library to do things with less effort.",
+  "keywords": ["function", "functional", "lazy", "async"],
+  "version": "0.0.1",
+  "engines": {
+    "node": "*"
+  },
+  "author": {
+    "name": "Adam Griffiths",
+    "url": "https://github.com/aogriffiths"
+  },
+  "homepage": "https://github.com/aogriffiths/node-wtr-lazy-functions",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aogriffiths/node-wtr-lazy-functions.git"
+  },
+  "scripts": {
+    "test": "synct test/*.js"
+  },
+  "main": "./index",
+  "dependencies": {
+    "async" : ">=0.1.22",
+    "underscore" : ">=1.4.3"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
