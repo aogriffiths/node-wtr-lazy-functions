@@ -18,7 +18,7 @@ with less effort.
 This library is for Victor Tugelbend (and lazy people like him) for whom "Having to haul 
 arround extra poundage \[is\] far too much effort, so he saw to it that he never put it 
 on and he kept himself in trim becuase doing things with decent muscles was far less 
-effort tha trying to achive things with bags of flab". [Pratchett, T] [1]
+effort tha trying to achive things with bags of flab". [Pratchett, T](pratchett2009moving)
 
 So What Does it Do?!
 --------------------
@@ -67,7 +67,7 @@ Both have good reasons for being like this but it means
 References
 ==========
 
-[1]: http://books.google.co.uk/books?id=gDnb8AlIMAUC "Moving Pictures"
+<a id="pratchett2009moving"></a>Moving Pictures
 
 '''
 @book{pratchett2009moving,
