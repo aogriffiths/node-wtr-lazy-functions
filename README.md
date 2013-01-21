@@ -67,7 +67,7 @@ Both have good reasons for being like this but it means
 References
 ==========
 
-<a id="pratchett2009moving"></a>Moving Pictures
+<a id="pratchett2009moving" name="pratchett2009moving"></a>Moving Pictures
 
 ```latex
 @book{pratchett2009moving,
