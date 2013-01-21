@@ -64,6 +64,12 @@ out for those that don't follow the convention, for example:
 
 Both have good reasons for being like this but it means 
 
+Credits
+=======
+ 
+* John Resig - http://ejohn.org/blog/partial-functions-in-javascript/
+* Caolan McMahon - https://github.com/caolan/async
+
 References
 ==========
 

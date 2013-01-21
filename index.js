@@ -1,9 +1,10 @@
 /**
  * @Author Adam Griffiths
- * @description a few helper functions for functions / a more functional style
+ * @description [Node water](https://github.com/aogriffiths/node-wtr) to grow your node.js project with less effort. 
  * 
  * Credits:
- * http://ejohn.org/blog/partial-functions-in-javascript/
+ * John Resig - http://ejohn.org/blog/partial-functions-in-javascript/
+ * Caolan McMahon - https://github.com/caolan/async
  */
 
 var _              = require("underscore");
