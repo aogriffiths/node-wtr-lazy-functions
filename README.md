@@ -5,11 +5,11 @@
  ))`)`) ___  )L __ __           / / /           n            \|/              \|/
 ((,(,' ((_( (( (('(|             n             \|/            |                |
 ```
-[Node Water](https://github.com/aogriffiths/node-wtr)
+Part of the [Node Water](https://github.com/aogriffiths/node-wtr) collection. 
 
 * __lazy-functions__ - Grow your node.js project with less effort.
-    * [github.com](https://github.com/aogriffiths/node-wtr-lazy-functions)
-    * [npmjs.org](https://npmjs.org/package/lazy-functions)
+    * On [github.com](https://github.com/aogriffiths/node-wtr-lazy-functions)
+    * On [npmjs.org](https://npmjs.org/package/lazy-functions)
 
 This library is for Victor Tugelbend (and lazy people like him) for whom "Having to haul 
 arround extra poundage \[is\] far too much effort, so he saw to it that he never put it 
@@ -23,14 +23,19 @@ Povides asynchronous control flow wrappers designed to read naturally, using
 Caolan McMahon excellent [async](https://github.com/caolan/async)  library under 
 the bonnet.
 
-Install
--------
+Installation
+------------
 
-```bash
-npm install lazy-functions
-```
-See also [lazy-functions](https://npmjs.org/package/lazy-functions) on npmjs.org.
+Official releases can be obtained from:
+* __github.com__ - the [tags section](https://github.com/aogriffiths/node-wtr-lazy-functions/tags) 
+                   provides links to zip or tar.gz packages. 
+* __npm__        - use `npm install lazy-functions`
 
+The lastest developed code may node have not have been released, but can always be found
+from:
+* __github.com__ - the [project homepage](https://github.com/aogriffiths/node-wtr-lazy-functions)
+                   provides links to all the source code, branches and issue tracking.
+                   
 Concepts
 --------
 

@@ -2,8 +2,8 @@
  * @Author Adam Griffiths
  * @description [Node water](https://github.com/aogriffiths/node-wtr) to
  *              grow your node.js project with less effort.
- *              [github.com](https://github.com/aogriffiths/node-wtr-lazy-functions)
- *              [npmjs.org](https://npmjs.org/package/lazy-functions)
+ *              On [github.com](https://github.com/aogriffiths/node-wtr-lazy-functions)
+ *              On [npmjs.org](https://npmjs.org/package/lazy-functions)
  * 
  * Credits: John Resig - http://ejohn.org/blog/partial-functions-in-javascript/
  * Caolan McMahon - https://github.com/caolan/async
