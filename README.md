@@ -1,9 +1,27 @@
-Lazy Functions
-==============
+```
+                                 .("""")                                      (j)
+                               (_(_ __(_ )                                 (n o d e)
+ _ _ _       _                   / / /                       (n)              (s)
+ ))`)`) ___  )L __ __           / / /           n            \|/              \|/
+((,(,' ((_( (( (('(|             n             \|/            |                |
+```
 
-[Node water](https://github.com/aogriffiths/node-wtr) for lazy people like me, who
-want to do more node.js with less effort. 
+Lazy
+====
 
+Preamble
+--------
+
+[Node water](https://github.com/aogriffiths/node-wtr) to grow your node.js project 
+with less effort. 
+
+This library is for Victor Tugelbend (and lazy people like him) for whom "Having to haul 
+arround extra poundage \[is\] far too much effort, so he saw to it that he never put it 
+on and he kept himself in trim becuase doing things with decent muscles was far less 
+effort tha trying to achive things with bags of flab". [Pratchett, T] [1]
+
+So What Does it Do?!
+--------------------
 
 Povides asynchronous control flow wrappers designed to read naturally, using 
 Caolan McMahon excellent [async](https://github.com/caolan/async)  library under 
@@ -45,3 +63,20 @@ out for those that don't follow the convention, for example:
 * [fs.exists](http://nodejs.org/api/fs.html#fs_fs_exists_path_callback) calls it's callback callback(exisits) with no err argument. 
 
 Both have good reasons for being like this but it means 
+
+References
+==========
+
+[1]: http://books.google.co.uk/books?id=gDnb8AlIMAUC "Moving Pictures"
+
+'''
+@book{pratchett2009moving,
+  title={Moving Pictures: (Discworld Novel 10)},
+  author={Pratchett, T.},
+  isbn={9781407034737},
+  series={Discworld Novels},
+  url={http://books.google.co.uk/books?id=gDnb8AlIMAUC},
+  year={2009},
+  publisher={Transworld}
+}
+'''
