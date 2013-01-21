@@ -1,8 +1,8 @@
 {
   "name": "lazy-functions",
-  "description": "A lazy library to do things with less effort.",
-  "keywords": ["function", "functional", "lazy", "async"],
-  "version": "0.0.1",
+  "description": "Grow your node.js project with less effort",
+  "keywords": ["water","function", "functional", "lazy", "async"],
+  "version": "0.0.2",
   "engines": {
     "node": "*"
   },
