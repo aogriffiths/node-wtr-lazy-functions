@@ -2,7 +2,7 @@
   "name": "lazy-functions",
   "description": "Grow your node.js project with less effort",
   "keywords": ["water","function", "functional", "lazy", "async"],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "node": "*"
   },

@@ -6,14 +6,9 @@
 ((,(,' ((_( (( (('(|             n             \|/            |                |
 ```
 
-Lazy
-====
-
-Preamble
---------
-
-[Node water](https://github.com/aogriffiths/node-wtr) to grow your node.js project 
-with less effort. 
+* __lazy-functions__ - Grow your node.js project with less effort.
+    * [github.com](https://github.com/aogriffiths/node-wtr-lazy-functions)
+    * [npmjs.org](https://npmjs.org/package/lazy-functions)
 
 This library is for Victor Tugelbend (and lazy people like him) for whom "Having to haul 
 arround extra poundage \[is\] far too much effort, so he saw to it that he never put it 
