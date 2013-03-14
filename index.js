@@ -9,8 +9,16 @@
  * Caolan McMahon - https://github.com/caolan/async
  */
 
+//TEST
+
+
 var _ = require("underscore");
 var async = require("async");
+
+//for convienience so users of lazy can have quick access to async too.
+exports.async = async;
+
+var keywords = {}; //used for in addition to exporting for some keyword like functions
 
 var logger = {
   debug : function() {
@@ -34,60 +42,119 @@ var FunctionSpec = exports.FunctionSpec = function(func) {
   return this;
 }
 
-// Call is synonymous with FunctionSpec
-var Call = exports.Call = FunctionSpec;
+//START Keywords ////////////////////////////////////////////////
+//Call 
+var Call = keywords.Call = exports.Call = function(func) {
+  if (!(func instanceof FunctionSpec)) {
+    func = new FunctionSpec(func);
+  }
+  return func;
+}
+
+//Then 
+var Then = keywords.Then = exports.Then = function(func) {
+  if (!(func instanceof FunctionSpec)) {
+    func = new FunctionSpec(func);
+  }
+  func.Then = true;
+  return func;
+}
+
+//Call 
+var Push = keywords.Push = exports.Push = function(data) {
+  var func = function(callback){
+    callback(null, data);
+  }
+  func = new FunctionSpec(func);
+  return func;
+}
+
+//Finally 
+var Finally = keywords.Finally = exports.Finally = function(func) {
+  if (!(func instanceof FunctionSpec)) {
+    func = new FunctionSpec(func);
+  }
+  func.Finally = true;
+  return func;
+}
+//END Keywords ////////////////////////////////////////////////
+
 
 FunctionSpec.prototype.withargs = function() {
-  this.args = Array.prototype.slice.call(arguments);
+  if(!this.args) this.args = [];
+  this.args = this.args.concat(Array.prototype.slice.call(arguments));
   return this;
 }
 
-FunctionSpec.prototype.resultin = function(result) {
+FunctionSpec.prototype.resultin = FunctionSpec.prototype.into = function(result) {
   this.result = result;
   return this;
 }
 
+/*
 var river = exports.river = function(funcspecs, callback) {
 }
+*/
 
-var run = exports.run = function(funcspecs, callback) {
+var river = exports.river = function(funcspecs, finalcallback) {
   if (!Array.isArray(funcspecs)) {
     funcspecs = Array.prototype.slice.call(arguments);
-    callback = funcspecs.pop();
+    finalcallback = undefined;
   }
   var context = {};
   var tasks = comipleforasyncauto(funcspecs, context);
-  async.auto(tasks, function(err, data) {
-    callback(err, context);
-  });
+  
+  //Try to find a function marked as Finally
+  finalcallback = finalcallback || getFinalCallback(funcspecs);
+  //console.log('finalcallback', finalcallback);
+  
+  asynccallback = function(err, data){
+    if(finalcallback){
+      finalcallback(err, context);
+    }
+  }
+  async.auto(tasks, asynccallback);
 }
 
-var comipleforasyncauto = exports.comipleforasyncauto = function(funcspecs,
-    context) {
+var getFinalCallback = exports.getFinalCallback = function(funcspecs){
+  var found = undefined;
+  funcspecs.forEach(function(funcspec){
+    if(funcspec.Finally) {
+      found = funcspec.func;
+    }
+  });
+  return found;
+}
+
+var comipleforasyncauto = exports.comipleforasyncauto = function(funcspecs, context) {
   var autoinput = {}
   var resultstosteps = {}
   var step = 0;
   funcspecs.forEach(function(funcspec) {
-    funcspec.func = funcspec.func || funcspec;
-    step++;
-    if (funcspec.result) {
-      if (!resultstosteps[funcspec.result]) {
-        resultstosteps[funcspec.result] = [];
+    if(! funcspec.Finally){ //Finally functions are handled separately
+      funcspec.func = funcspec.func || funcspec;
+      step++;
+      if (funcspec.result) {
+        if (!resultstosteps[funcspec.result]) {
+          resultstosteps[funcspec.result] = [];
+        }
+        resultstosteps[funcspec.result].push(step);
       }
-      resultstosteps[funcspec.result].push(step);
-    }
-    var todo = [];
-    todo.push(wrapFnForAsyncAuto(funcspec.func, funcspec.args, funcspec.result
-        || '_' + step, context));
-    if (funcspec.args) {
-      funcspec.args.forEach(function(arg) {
-        var steps = resultstosteps[arg];
-        steps.forEach(function(step) {
-          todo.unshift(step);
+      var todo = [];
+      todo.push(wrapFnForAsyncAuto(funcspec.func, funcspec.args, funcspec.result || '_' + step, context));
+      if (funcspec.args) {
+        funcspec.args.forEach(function(arg) {
+          var steps = resultstosteps[arg];
+          steps.forEach(function(step) {
+            todo.unshift(step);
+          })
         })
-      })
+      }
+      if(funcspec.Then){
+        todo.unshift(step - 1);
+      }
+      autoinput[step] = todo;
     }
-    autoinput[step] = todo;
   })
   return autoinput;
 }
@@ -112,4 +179,9 @@ function wrapFnForAsyncAuto(func, args, result, context) {
     newargs.push(contextKeeper(result, context, callback));
     func.apply(null, newargs);
   }
+}
+
+var pullkeywordsinto = exports.pullkeywordsinto = function(obj){
+  for (var key in keywords)
+    global[key] = keywords[key]
 }
